@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flarglepox Sensi</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffd0;
+    }
+    .section {
+      margin: 2rem 0;
+    }
+    .thumbnail {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border: 2px solid #00ffd0;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+    }
+    .label {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+    video {
+      width: 90%;
+      max-width: 500px;
+      display: block;
+      margin: 1rem auto;
+    }
+    .content {
+      display: none;
+      text-align: center;
+    }
+  </style>
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+
+<h1>Flarglepox Sensi Tool</h1>
+
+<div class="section">
+  <img src="ios_thumbnail.jpg" class="thumbnail" alt="iOS Sensi" onclick="showContent('iosContent')" />
+  <div class="label">iOS Sensi</div>
+</div>
+
+<div class="section">
+  <img src="android_thumbnail.jpg" class="thumbnail" alt="Android Sensi" onclick="showContent('androidContent')" />
+  <div class="label">Android Sensi</div>
+</div>
+
+<div id="iosContent" class="content">
+  <h2>iOS Sensi Preview</h2>
+  <img src="ios_thumbnail.jpg" width="90%" alt="iOS Screenshot"/>
+  <video controls>
+    <source src="ios_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div id="androidContent" class="content">
+  <h2>Android Sensi Preview</h2>
+  <img src="android_thumbnail.jpg" width="90%" alt="Android Screenshot"/>
+  <video controls>
+    <source src="android_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+</body>
+</html>
